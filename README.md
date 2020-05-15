@@ -1,2 +1,2 @@
 # Spring_bootWebServiceSoap
-Spring boot Web service, Soap, guava, maven, Crud. Jpa, hibernate by luis mendoza
+Spring boot Web service, Soap, guava, maven, Crud. Jpa,spring data by luis mendoza

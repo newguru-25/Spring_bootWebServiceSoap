@@ -1,0 +1,101 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.demo.com/wssoap"
+	targetNamespace="http://www.demo.com/wssoap"
+	elementFormDefault="qualified">	
+	
+	 <xs:element name="getClienteRequest">
+        <xs:complexType/>
+    </xs:element>    
+    <xs:element name="getClienteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clienteType" type="tns:clienteType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element> 
+    
+	
+	<xs:element name="getClienteByIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idCliente" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getClienteByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="clienteType" type="tns:clienteType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+<!-- 	sd -->
+	
+	 <xs:element name="updateClienteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clienteType" type="tns:clienteType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateClienteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+	  <xs:element name="deleteClienteRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="idCliente" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+        <xs:element name="deleteClienteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+      <xs:element name="addClienteRequest">
+        <xs:complexType>
+            <xs:sequence>
+               <xs:element name="clienteType" type="tns:clienteType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+        <xs:element name="addClienteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+      <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType> 
+	
+	
+	  	<xs:complexType name="clienteType">
+		<xs:sequence>
+			<xs:element name="idCliente" type="xs:int"/>
+			<xs:element name="nombreCompleto" type="xs:string"/>
+			<xs:element name="idVehiculo" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>    
+	
+	
+
+
+</xs:schema>
